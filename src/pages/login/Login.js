@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import {useContext} from "react"
-import {useHistory} from "react-router-dom"
 import { LoginContexts } from '../../context/LoginContext';
 import {
   FormContainer,
@@ -10,27 +10,40 @@ import {
   StyledForm,
   StyledInput,
 } from './LoginStyle';
+import { getDefaultNormalizer } from '@testing-library/dom';
 
 const Login = () => {
-    const {email, setEmail,password , setPassword,code, setCode} = useContext(LoginContexts)
+    const {data,setData, email, setEmail,password , setPassword,code, setCode,getData} = useContext(LoginContexts)
     const history = useHistory();
 
     async function login(e){
         e.preventDefault()
-        console.log(email,password)
         let item = {email, password, code}
         let result = await fetch("http://159.89.214.246:4100/api/v1/login",{
             method : "POST",
-            headers : {
-                "Content-Type" :"application/json",
-                "x-skysens-auth":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTExLCJpYXQiOjE1OTAwNTc2ODIsImV4cCI6MjE5NDg1NzY4Mn0.zdSEE6vi1cvhfmr4XWWxucOhFigXxr1oMnN5BP_b0Qo"
+            headers:{
+              "Content-Type" : "application/json",
+              "Accept":"application/json"
             },
             body : JSON.stringify(item)
-
-        });
-        result = await result.json() ;
-    
+        })
+        result = await result.json()
+        console.log(data, result)
+        if (result.succeed){
+            setData(result.data.token)
+            history.push("/Dashboard");
+        }else{
+           return alert(result.message)
+        }
+        
+        
+        
+        // result = await result.json() ;
+        // localStorage.setItem("user-info",JSON.stringify(item))
+        // history.push("/enter")
     }
+
+    
   return (
     <LoginContainer>
       <FormContainer>
