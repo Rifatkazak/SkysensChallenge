@@ -14,13 +14,12 @@ export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content:space-around;
-  
 `;
 
 export const Cards = styled.div`
 font-family: 'Dongle', sans-serif;
 font-size:30px;
-width:20%;
+min-width:20%;
 padding:1rem;
 display:flex;
 flex-direction:column;
@@ -83,10 +82,11 @@ export const HomeButton = styled(Link)`
   padding : 10px;
   font-family: 'Dongle', sans-serif;
   font-size:50px;
+  margin-left:1rem;
   display:flex;
   justify-content:center;
   align-items:center;
-  width :180px;
+  width :%30;
   height:80px;
   background-color : rgba(253,253,150,0.7);
   color:#052349;
