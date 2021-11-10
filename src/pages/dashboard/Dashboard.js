@@ -2,11 +2,15 @@ import {useContext} from "react"
 import { LoginContexts } from '../../context/LoginContext';
 
 import {
-    Header,
-    HomeContainer,
-    HomeButton,
+    Container,
     CardContainer,
-    ButtonContainer,
+    Title,
+    Cards,
+    Description,
+    Time,ButtonContainer,
+    HomeButton,
+    DescriptionItem,
+    LiveDate
   } from './DashboardStyle';
 
 const Dashboard = () => {
@@ -28,23 +32,36 @@ const Dashboard = () => {
         console.log(getdata)
 
     }
+    const getTime = (time) => {
+        let date = new Date(time)
+        console.log(date)
+        return date
+    }
+
     return (
-        <HomeContainer>
-            <Header></Header>
-            <div>{getdata.map((item,index) => (
-                <div key= {index}>
-                    <li>{item.name}</li>
-                    <li>{item.createdAt}</li>
-                    <li>{item.data.temperature}</li>
-                    <li>{item.data.humidity}</li>
-                </div>
-            ))}</div>
+        <Container>
             <ButtonContainer>
-            <HomeButton to="/login">LOGOUT </HomeButton>
-            <HomeButton onClick={getData}>GETDATA</HomeButton>
+                <HomeButton to="/login">LOGOUT </HomeButton>
+                <HomeButton onClick={getData}>GETDATA</HomeButton>
             </ButtonContainer>
-            
-        </HomeContainer>
+            <CardContainer>
+            {getdata.map((item,index) => (
+                <Cards key= {index}>
+                    <Title>
+                        <h2>{item.name}</h2>
+                    </Title>
+                    <Description> 
+                        < DescriptionItem>Sıcaklık : {item.data.temperature}°C</ DescriptionItem>
+                        < DescriptionItem>Nem : { item.data.humidity} %</ DescriptionItem>
+                    </Description>
+                    <Time>
+                        <p>Time  : {item.createdAt.slice(11,19)}</p> 
+                       <p>Date : {item.createdAt.slice(0,10)}</p> 
+                    </Time>
+                </Cards> 
+            ))}
+            </CardContainer>
+        </Container>
         
     )
 }

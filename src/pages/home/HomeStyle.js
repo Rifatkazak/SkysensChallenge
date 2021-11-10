@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom";
 
 export const HomeContainer = styled.div`
-  background-image: url('https://media-exp1.licdn.com/dms/image/C4D1BAQHS0y2n-Bb_yA/company-background_10000/0/1574949786879?e=2159024400&v=beta&t=brT-5reSIAKIz2-oKhI_w9T_OlvfmlVdblkXV7ORIh4');
+  background-image: url('https://www.laprogressive.com/wp-content/uploads/2021/04/GettyImages-1215836494.jpeg');
   background-repeat: no-repeat;
+  filter: brightness(110%);
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -14,21 +15,23 @@ export const HomeContainer = styled.div`
 `;
 
 export const Header = styled.h1`
-  color: white;
-  font-family: 'Girassol', sans-serif;
-  font-size: 3rem;
-  color:rgba(70, 28, 12)
+  color: #00ff7f;
+  text-shadow: 10px 10px 2px rgba(10, 10, 10, 1);;
+  filter: brightness(100%);
+  font-family: Georgia, serif;
+  font-size: 7rem;
   
 `;
 export const HomeButton = styled(Link)`
   padding : 10px;
-  width :250px;
-  background-color : #0050ff;
-  color:white;
-  font-size:20px;
-  border: 3px solid #0050ff;
+  width :350px;
+  background-color : rgba(256, 256, 256, 0.4);
+  color:#052349;
+  font-size:25px;
+  font-weight:bold;
+  border: 3px solid #00ff7f;
   border-radius:9px;
   text-decoration:none;
   text-align : center;
-  transition : ease-in-out 0.3s
+  transition : ease-in-out 5s
 `;

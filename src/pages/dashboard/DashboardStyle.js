@@ -1,52 +1,100 @@
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
 
-export const HomeContainer = styled.div`
-  background-image: url('https://media-exp1.licdn.com/dms/image/C4D1BAQHS0y2n-Bb_yA/company-background_10000/0/1574949786879?e=2159024400&v=beta&t=brT-5reSIAKIz2-oKhI_w9T_OlvfmlVdblkXV7ORIh4');
-  background-repeat: no-repeat;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
+export const Container = styled.div`
+background-image: url('https://i2.wp.com/softwarestrategiesblog.com/wp-content/uploads/2019/02/top-and-hottest-25-iot-startups-to-watch-in-2019-final.jpg?fit=1383%2C764&ssl=1');
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+flex-direction:column;
+height:100vh;
 `;
 
-export const Header = styled.h1`
-  color: white;
-  font-family: 'Girassol', sans-serif;
-  font-size: 3rem;
-  color:rgba(70, 28, 12)
+export const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
   
 `;
-export const ButtonContainer = styled.div`
-    width : 20rem;
-    display:flex;
-    justify-content :space-between;
+
+export const Cards = styled.div`
+font-family: 'Dongle', sans-serif;
+font-size:30px;
+width:20%;
+padding:1rem;
+display:flex;
+flex-direction:column;
+justify-content:space-evenly;
+background-color: rgba(253,253,150,0.9);
+border-radius: 55px;
+color:#052349;
+box-shadow: 3px 3px 5px #AB7747;
+margin: 1rem;
+margin-bottom:5rem;
+height:20rem;
+box-shadow: 5px 7px 10px 9px rgba(0, 0, 0, 0.81);
+  
+`;
+export const Title = styled.div`
+font-size:25px;
+text-align :center;
+`;
+export const Time = styled.div`
+  font-size:2.5rem;
+  display:flex;
+  width:100%;
+  margin:auto;
+  justify-content:space-around;
+  
+  
 `;
 
+export const Description = styled.div`
+  font-size:2.5rem;
+  list-style:none;
+  text-decoration : none;
+  display :flex;
+  width:100%;
+  margin:auto;
+  justify-content : space-around;
+  align-items:flex-start;
+
+`;
+export const DescriptionItem = styled.p`
+  margin : 0px auto;
+`;
+
+
+export const ButtonContainer = styled.div`
+  width:30%;
+  margin:auto;
+  display :flex;
+  margin-top:5rem;
+  margin-bottom:5rem;
+  justify-content : space-between;
+`;
+export const LiveDate = styled.div`
+  width:30%;
+  display :flex;
+  font-size:50px;
+  justify-content : space-between;
+`;
 export const HomeButton = styled(Link)`
   padding : 10px;
-  width :100px;
-  background-color : #0050ff;
-  color:white;
-  font-size:20px;
-  border: 3px solid #0050ff;
+  font-family: 'Dongle', sans-serif;
+  font-size:50px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width :180px;
+  height:80px;
+  background-color : rgba(253,253,150,0.7);
+  color:#052349;
+  border: 6px solid #fff;
   border-radius:9px;
   text-decoration:none;
   text-align : center;
   transition : ease-in-out 0.3s
 `;
 
-const CardContainer = styled.div`
-  display: flex;
-  width: 100px;
-  height: 150px;
-  border: 3px solid ${props => props.color};
-  border-radius: 15px;
-  justify-content: space-around;
-  font-size: 5em;
-  color: ${props => props.color};
-`;
 

@@ -13,7 +13,7 @@ import {
 import { getDefaultNormalizer } from '@testing-library/dom';
 
 const Login = () => {
-    const {data,setData, email, setEmail,password , setPassword,code, setCode,getData} = useContext(LoginContexts)
+    const {data,setData, email, setEmail,password , setPassword,code, setCode} = useContext(LoginContexts)
     const history = useHistory();
 
     async function login(e){

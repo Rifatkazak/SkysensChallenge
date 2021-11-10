@@ -20,7 +20,7 @@ const Navbar  = () => {
                 rel ="noopener noreferre"
                 >
                     About</MenuLink>
-                <MenuLink to="/login">Logout</MenuLink>
+                <MenuLink to="/Login">Logout</MenuLink>
             </Menu>
         </Nav>
     )
