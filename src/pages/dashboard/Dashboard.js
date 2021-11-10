@@ -1,6 +1,5 @@
 import {useContext} from "react"
 import { LoginContexts } from '../../context/LoginContext';
-
 import {
     Container,
     CardContainer,
@@ -11,33 +10,24 @@ import {
     HomeButton,
     DescriptionItem,
     LiveDate
-  } from './DashboardStyle';
+  } from './DashboardStyle'; // for styled-components
 
 const Dashboard = () => {
-    const {data,getdata, setGetdata } = useContext(LoginContexts)
+    const {data,getdata, setGetdata } = useContext(LoginContexts) //take state with  context constructer
     
     async function getData(e){
         e.preventDefault();
-        let result = await fetch("http://159.89.214.246:4100/api/v1/skysens/datas/device",{
+        let result = await fetch("http://159.89.214.246:4100/api/v1/skysens/datas/device",{ // take info with post from api belongs to device 
             method : "POST",
             headers:{
-              "x-skysens-auth": `${data}`,
+              "x-skysens-auth": `${data}`, // data is token which it take from login
               "Content-Type" : "application/json",
             },
             body : JSON.stringify({"dataType" : "parsed", "page":"1","limit":"1000","deviceType":"SKYCLD1"})
         })
-        result = await result.json()
+        result = await result.json() // must change to json because of fetch
         setGetdata(result.data)
-        console.log(result)
-        console.log(getdata)
-
     }
-    const getTime = (time) => {
-        let date = new Date(time)
-        console.log(date)
-        return date
-    }
-
     return (
         <Container>
             <ButtonContainer>
@@ -56,7 +46,7 @@ const Dashboard = () => {
                     </Description>
                     <Time>
                         <p>Time  : {item.createdAt.slice(11,19)}</p> 
-                       <p>Date : {item.createdAt.slice(0,10)}</p> 
+                        <p>Date  : {item.createdAt.slice(0,10)}</p> 
                     </Time>
                 </Cards> 
             ))}

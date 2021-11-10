@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from "react-router-dom";
 import {useContext} from "react"
 import { LoginContexts } from '../../context/LoginContext';
@@ -10,7 +10,7 @@ import {
   StyledForm,
   StyledInput,
 } from './LoginStyle';
-import { getDefaultNormalizer } from '@testing-library/dom';
+
 
 const Login = () => {
     const {data,setData, email, setEmail,password , setPassword,code, setCode} = useContext(LoginContexts)
@@ -30,10 +30,10 @@ const Login = () => {
         result = await result.json()
         console.log(data, result)
         if (result.succeed){
-            setData(result.data.token)
-            history.push("/Dashboard");
+            setData(result.data.token) // if login is successful, s
+            history.push("/Dashboard"); // for redirect to Dashboard
         }else{
-           return alert(result.message)
+           return alert(result.message.toUpperCase())
         }
         
         
@@ -42,8 +42,6 @@ const Login = () => {
         // localStorage.setItem("user-info",JSON.stringify(item))
         // history.push("/enter")
     }
-
-    
   return (
     <LoginContainer>
       <FormContainer>

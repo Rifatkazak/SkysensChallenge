@@ -2,7 +2,6 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Login from "../pages/login/Login"
 import Home from "../pages/home/Home"
 import Dashboard from "../pages/dashboard/Dashboard"
-import Navbar from "../components/Navbar/Navbar";
 
 
 function AppRouter(){
