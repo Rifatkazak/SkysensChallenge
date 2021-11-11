@@ -19,12 +19,13 @@ export const Header = styled.h1`
   text-shadow: 10px 10px 2px rgba(10, 10, 10, 1);;
   filter: brightness(100%);
   font-family: Georgia, serif;
+  text-align:center;
   font-size: 7rem;
   
 `;
 export const HomeButton = styled(Link)`
   padding : 10px;
-  width :350px;
+  width :50%;
   background-color : rgba(256, 256, 256, 0.4);
   color:#052349;
   font-size:25px;

@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom";
 
 export const Container = styled.div`
-background-image: url('https://i2.wp.com/softwarestrategiesblog.com/wp-content/uploads/2019/02/top-and-hottest-25-iot-startups-to-watch-in-2019-final.jpg?fit=1383%2C764&ssl=1');
+background-color: #055349;
 background-repeat: no-repeat;
 background-size: cover;
 display: flex;
 flex-direction:column;
-height:100vh;
+height:100%;
+min-height:100vh;
 `;
 
 export const CardContainer = styled.div`
@@ -19,8 +20,8 @@ export const CardContainer = styled.div`
 export const Cards = styled.div`
 font-family: 'Dongle', sans-serif;
 font-size:30px;
-min-width:20%;
-padding:1rem;
+
+min-width:21%;
 display:flex;
 flex-direction:column;
 justify-content:space-evenly;
@@ -29,7 +30,7 @@ border-radius: 55px;
 color:#052349;
 box-shadow: 3px 3px 5px #AB7747;
 margin: 1rem;
-margin-bottom:5rem;
+margin-bottom:2rem;
 height:20rem;
 box-shadow: 5px 7px 10px 9px rgba(0, 0, 0, 0.81);
   
@@ -68,8 +69,8 @@ export const ButtonContainer = styled.div`
   width:30%;
   margin:auto;
   display :flex;
-  margin-top:5rem;
-  margin-bottom:5rem;
+  margin-top:4rem;
+  margin-bottom:2.5rem;
   justify-content : space-between;
 `;
 export const LiveDate = styled.div`

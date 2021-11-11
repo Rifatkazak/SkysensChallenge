@@ -9,7 +9,6 @@ import {
     Time,ButtonContainer,
     HomeButton,
     DescriptionItem,
-    LiveDate
   } from './DashboardStyle'; // for styled-components
 
 const Dashboard = () => {
